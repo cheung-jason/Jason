@@ -1,0 +1,51 @@
+﻿Purchase Date,Roaster Name,Roaster City/State,Roaster Country,Coffee Name,Coffee Varietals 1,Coffee Varietals 2,Coffee Varietals 3,Coffee Origin Region,Coffee Origin Country,Farm,Producers,Altitude (MASL),Process,Roast Level,Tasting Notes 1,Tasting Notes 2,Tasting Notes 3,Tasting Notes 4,Weight (g),Price (USD),$ per 100g,Drunk as
+10/1/2024,Hydrangea Coffee Roasters,"Berkeley, CA",USA,Alvaro Rodriguez LPET,Castillo,,,Cundinamarca,Colombia,,Alvaro Rodriguez,1450,Washed Bio-innovation,Light,Kiwi,Tart Apple,Chamomile,,227,25,11.0,Pour-Over
+7/18/2024,Nomad Coffee Roasters,Barcelona,Spain,Albino Ibias Gesha,Geisha,,,Cusco,Peru,Incahuasi Valley,Albino Ibias,2250,Washed,Light,Tropical Fruit,Chamomile,Wild Floral Honey,,250,34,13.6,Pour-Over
+7/16/2024,Nomad Coffee Roasters,Barcelona,Spain,Las Perlitas,Pink Bourbon,,,Huila,Colombia,,Various Producers,1900,Washed,Light,Honeydew,Granny Smith,Lemongrass,,250,31,12.4,Pour-Over
+4/16/2024,April Coffee Roaster,Copenhagen,Denmark,Ethiopia Regessa,Krume 74158,,,Sidama,Ethiopia,Regessa,,2270,Natural,Light,Raspberry,Floral,Citrus,,250,24,9.6,Espresso
+6/26/2024,Elixr Coffee,"Philadelphia, PA",USA,Juan Pena,Typica,,,"San Lorenzo, Saraguro, Loja",Ecuador,La Papaya,Juan Pena,2100,Washed,Light,Nectarine,Mandarin Orange,Cherry,,283,22,7.8,Pour-Over
+11/5/2024,Sisu,Panama City,Panama,Elida Estate,Geisha,,,Boquette,Panama,Elida Estate,Lamastus Family Estates,1800,Natural ,Light,,,,,,,,Pour-Over
+11/5/2024,Sisu,Panama City,Panama,Elida Estate,,,,,Panama,Elida Estate,Lamastus Family Estates,,Washed,Light,,,,,,,,Pour-Over
+7/20/2024,Apollon's Gold,Tokoyo,Japan,,SL28,SL34,,,Kenya,,,,Washed,Light,Apple Cider,Nectarine,White Currant,,,24,,Pour-Over
+6/14/2024,Fritz Coffee Company,Seoul,Korea,La Esperanza,Yellow Caturra,,,,Unknown,,,,Washed,Light-Medium,,,,,,,,Pour-Over
+6/14/2024,Fritz Coffee Company,Seoul,Korea,Everything Good,Blend,,,,Blends,,,,Washed,Light-Medium,Dried Fruit,Caramel,Molasses,Citron Syrup,200,14.7,7.4,Pour-Over
+2/13/2024,Passenger Coffee,"Lancaster, PA",USA,Shoondhisa,JARC Selections,,,Guji Zone,Ethiopia,,Ture Waji,2173,Natural,Light,Florals,Strawberry,Mango,,283,24,8.5,Pour-Over
+8/16/2024,Provecho Coffee,"San Diego, CA",USA,Lomo La Resistencis,Typica,Bourbon,,Oaxaca,Mexico,,Maricela Perez,1800,Washed,Medium,Strawberry Jam,Milk Chocolate,,,250,,,Pour-Over
+8/16/2024,Provecho Coffee,"San Diego, CA",USA,Guatemala Pura Fruta,,,,,Guatemala,,,,Natural,Medium,Cherry,Meyer Lemon,Almond Brittle,,250,,,Pour-Over
+8/16/2024,Provecho Coffee,"San Diego, CA",USA,ZZZ Decaf Finca Las Nubes,,,,Huila,Colombia,Las Nubes,,,Decaf Swiss Water,Medium,Cantaloupe,Toffee,Black Tea,,250,,,Pour-Over
+9/20/2024,Ditta Artigianale,Florence,Italy,Mana Nufti,Hierloom,,,Jimma,Ethiopia,,,2000,Honey,Medium-Light,White Flower,Lemon Zest,Peach,,,,,Espresso
+9/20/2024,Ditta Artigianale,Florence,Italy,AA Gicherori,Batian,SL28,SL35,Gicherori ,Kenya,,,1800,Washed,Medium-Light,Cherry Cola,Toffee,Black Currant,Chocolate,,,,Espresso
+5/4/2024,Foundation Coffee,"Fairfax,VA",USA,Gera Estate GR1,,,,,Ethiopia,,,,Natural Anaerobic,Light-Medium,Blueberry,Watermelon,Pineapple,Papaya,227,23,10.1,Pour-Over
+10/18/2024,The Barn,Berlin,Germany,Chelbesa,Hierloom,,,Yirgacheffe,Ethiopia,,Hailu Figa,2200,Natural,Light-Medium,Peach,Fudge,Floral,,,,,Pour-Over
+6/2/2024,Prodigal Coffee,"Boulder, CO",USA,Finca Costa Rice,Pink Bourbon,,,Huila,Colombia,,,,Washed,Light,Apricot,Tangerine,Juicy,,250,,,Pour-Over
+9/9/2024,Prodigal Coffee,"Boulder, CO",USA,La Pelota,Pink Bourbon,,,Huila,Colombia,,,,Washed,Light,Apricot,Grapefruit,Bright,,250,,,Pour-Over
+6/2/2024,Prodigal Coffee,"Boulder, CO",USA,First Batch Test,,,,,Unknown,,,,,Light,,,,,,,,Pour-Over
+6/6/2024,Nagadi Coffee,"Silver Spring, MD",USA,Finca La Reserva,Geisha,,,Antioquia,Colombia,,,2000,Honey Anaerobic,Light-Medium,Strawberry,Grapefruit,Jasmine,Lavendar,170,,,Pour-Over
+3/23/2024,Nagadi Coffee,"Silver Spring, MD",USA,Yirgacheffe Kercha,Hierloom,,,Yirgacheffe,Ethiopia,,,,Washed,Light-Medium,Lemon,Jasmine Tea,Lemongrass,Honey,226,,,Pour-Over
+3/23/2024,Nagadi Coffee,"Silver Spring, MD",USA,Yirgacheffe Kercha,Hierloom,,,Yirgacheffe,Ethiopia,,,,Washed,Light-Medium,Lemon,Jasmine Tea,Lemongrass,Honey,226,,,Pour-Over
+11/18/2024,Leaves Coffee,Tokoyo,Japan,Ethiopia Nano Chala,74110,74112,,Agaro,Ethiopia,,Nano Challa Washing Station,2000,Washed,Light,White Grape,Lemon Tea,Bergamont,Cotton Candy,,,,Pour-Over
+11/18/2024,Leaves Coffee,Tokoyo,Japan,Ethiopia Hamasho,74158,,,Sidama,Ethiopia,,Kenean Dukamo,2360,Natural,Light,Grape,Apple,Darjeeling Tea,Candy,,,,Pour-Over
+11/18/2024,Leaves Coffee,Tokoyo,Japan,Colombia La Piragua,Pink Bourbon,,,Huila,Colombia,,Alex Vargas,1870,Natural Anaerobic,Light,Pink Grapefruit,Stonefruits,Herbal,Sugar Cane,,,,Pour-Over
+4/14/2024,September Coffee,Ottawa,Canada,Wilton Benitez,Geisha,,,Cauca,Colombia,Granja Paraiso 92,Wilton Benitez,2100,Anaerobic Washed with Yeast Inoculation + Thermal Shock ,Light,Florals,Herbal,Peach Candy,Citrus,,,,Pour-Over
+4/14/2024,September Coffee,Ottawa,Canada,Pink Lemonade,Pink Bourbon,,,Huila,Colombia,La Muralla,Various Producers,1900,Washed,Light,Blood Orange,Black Tea,Lemonade,,,,,Pour-Over
+4/14/2024,September Coffee,Ottawa,Canada,Daterra Milk Espresso,Peaberry,,,Cerrado,Brazil,Daterra,,1150,Natural,Medium,Rich Chocolate,Walnut,Nougat,,,,,Espresso
+11/26/2024,Lilo Coffee,Osaka,Japan,Finca Villa Maria,Geisha,,,Huila,Colombia,Finca Villa Maria,,1800,Infused Fermentation,Light,Jasmine,Lemon Candy,Orange,Yuzu,,,,Pour-Over
+5/29/2024,Ceremony Coffee,"Bethesda, MD",USA,Thesis,Caturra,Bourbon,Catui,Catui,Blends,,,1600,Washed,Light-Medium,Chocolate Chip,Cookie,Brown Sugar,Sweet,,,,Espresso
+5/29/2024,Ceremony Coffee,"Bethesda, MD",USA,Antithesis,Catui,Typica,,,Blends,,,,Washed,Dark,Dark Chocolate,Molasses,Creamy,,,,,Espresso
+9/14/2024,Ceremony Coffee,"Bethesda, MD",USA,Nicaragua El Diablo,Caturra,Catui,Catimor,Jinotega,Nicaragua,,,1200,Washed,Light-Medium,Date,Chocolate Malt,Pecan,,,,,Pour-Over
+3/1/2024,Ceremony Coffee,"Bethesda, MD",USA,Peru Pangoa,,,,,Peru,,,,Washed,Light-Medium,Dried Apricot,Chocolate Malt,Wildflower Honey,,,,,Pour-Over
+3/1/2024,Ceremony Coffee,"Bethesda, MD",USA,Peru Cenfrocafe,Caturra,Typica,,Cajamarca,Peru,,,1700,Washed,Light-Medium,Milk Chocolate,Hazelnut,Creamy,,,,,Pour-Over
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
