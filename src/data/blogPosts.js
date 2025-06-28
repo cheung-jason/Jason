@@ -3,7 +3,7 @@ const blogPosts = [
     id: 1,
     slug: 'My First Pour Over Coffee Competition',
     title: 'My First Pour Over Coffee Competition',
-    image: process.env.PUBLIC_URL + '/images/blog/the-bac-brewing-competition.jpg',
+    image: process.env.PUBLIC_URL + '/images/blog/the-bac-brewing-competition.JPG',
     category: 'Coffee',
     link: '/blog/My First Pour Over Coffee Competition',
     date: '2025-06-01',

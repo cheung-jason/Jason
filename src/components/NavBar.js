@@ -116,7 +116,7 @@ function NavBar({ blogPosts, experiences, scrollToSection }) {
           <Tooltip title="GitHub">
             <IconButton
               component="a"
-              href="https://github.com/spiritofchaoss"
+              href="https://github.com/cheung-jason"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: '#90a4ae' }}

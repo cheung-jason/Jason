@@ -107,12 +107,12 @@ function BlogPostPage() {
       {/* Previous/Next navigation */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 8 }}>
         {prevPost ? (
-          <Link href={prevPost.link} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
+          <Link href={`#/blog/${prevPost.slug}`} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
             {'< '}{prevPost.title}
           </Link>
         ) : <span />}
         {nextPost ? (
-          <Link href={nextPost.link} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
+          <Link href={`#/blog/${nextPost.slug}`} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
             {nextPost.title}{' >'}
           </Link>
         ) : <span />}
