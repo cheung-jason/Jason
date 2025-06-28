@@ -22,7 +22,7 @@ function HomePage() {
   return (
     <>
       <Helmet>
-      <title>Home | Jason Cheung Portfolio</title>
+      <title>Jason Cheung</title>
       <meta name="description" content="Portfolio homepage for Jason Cheung, scientific data analyst." />
       </Helmet>
       <FadeInSection>
