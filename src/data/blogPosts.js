@@ -62,7 +62,7 @@ const blogPosts = [
       "Ahhhhhh, typical light roast coffee snobbery right here. I promise to expand my palate in 2025 and try more variety besides washed Geisha and Pink Bourbons. Otherwise, this is an interesting heatmap clearly showing which side I learn more towards.",
       { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/2024_retrospective/tasting_notes_word_cloud.png', alt: 'tasting_notes_word_cloud' },
       "Tasting notes are cool, I guess I like my coffees with Florals and Kiwi and Honeydew. If you look carefully, I still drink coffee that labels with chocolate and nuts, and caramerl. Cheer's to a great 2024 and here's to a great 2025!",
-      { type: 'link', text: "p.s Here's raw data file for y'all nerds out there", href: '/data/2024_coffee_data.csv' },
+      { type: 'link', text: "p.s Here's raw data file for y'all nerds out there", href: process.env.PUBLIC_URL + '/data/2024_coffee_data.csv' },
     ]
   }
 ];
