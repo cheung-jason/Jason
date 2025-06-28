@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
 import FadeInSection from './FadeInSection';
 import ExperienceSection from './ExperienceSection';
+import { Helmet } from "react-helmet";
 
 function HomePage() {
   const location = useLocation();
@@ -20,6 +21,10 @@ function HomePage() {
   }, [location]);
   return (
     <>
+      <Helmet>
+      <title>Home | Jason Cheung Portfolio</title>
+      <meta name="description" content="Portfolio homepage for Jason Cheung, scientific data analyst." />
+      </Helmet>
       <FadeInSection>
         <Box
           id="home"
@@ -71,8 +76,8 @@ function HomePage() {
           <FadeInSection delay={0}><Typography variant="h3" sx={{ mb: 3, color: '#90a4ae', fontWeight: 700 }}>/ about me</Typography></FadeInSection>
           <FadeInSection delay={150}><Typography variant="body1" sx={{ mb: 2, fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Biology meets big data. Jason holds a Master's in Bioinformatics from Johns Hopkins and is passionate about using his skills to fuel scientific discovery and make a difference in the biomedical research space.</Typography></FadeInSection>
           <FadeInSection delay={300}><Typography variant="body1" sx={{ mb: 2, fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Jason is a scientific data analyst at the National Center for Advancing Translational Sciences (NCATS), where he is working on developing bioinformatics tools to accelerate the discovery of new therapies to treat rare disorders.</Typography></FadeInSection>
-          <FadeInSection delay={450}><Typography variant="body1" sx={{ fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Experienced in extracting insights from complex datasets, coordinating cross-functional teams, and developing bioinformatics tools to advance translational science. His scientific curiosity extends to exploring protein structure, function, design, and their diverse applications using data science, machine learning, and AI.</Typography></FadeInSection>
-          <FadeInSection delay={450}><Typography variant="body1" sx={{ fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Experienced in extracting insights from complex datasets, coordinating cross-functional teams, and developing bioinformatics tools to advance translational science. His scientific curiosity extends to exploring protein structure, function, design, and their diverse applications using data science, machine learning, and AI. Based in the DMV area and loves to see the world. He loves dogs, coffee, and fitness. Check out some of his hobbies <a href="#/blog" style={{ textDecoration: 'underline', color: '#90a4ae', fontStyle: 'italic' }}><span style={{ fontStyle: 'italic' }}>here</span></a>!</Typography></FadeInSection>
+          <FadeInSection delay={450}><Typography variant="body1" sx={{ mb: 2, fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Experienced in extracting insights from complex datasets, coordinating cross-functional teams, and developing bioinformatics tools to advance translational science. His scientific curiosity extends to exploring protein structure, function, design, and their diverse applications using data science, machine learning, and AI.</Typography></FadeInSection>
+          <FadeInSection delay={450}><Typography variant="body1" sx={{ mb: 2, fontSize: { xs: '1rem', md: '1.15rem' }, color: '#e6f1ff', maxWidth: 800 }}>Based in the DMV area and loves to see the world. He loves dogs, coffee, and fitness. Check out some of his hobbies <a href="#/blog" style={{ textDecoration: 'underline', color: '#90a4ae', fontStyle: 'italic' }}><span style={{ fontStyle: 'italic' }}>here</span></a>!</Typography></FadeInSection>
         </Box>
       </FadeInSection>
       <FadeInSection>
