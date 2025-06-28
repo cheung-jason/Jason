@@ -8,6 +8,7 @@ import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import experiences from './data/experiences';
 import blogPosts from './data/blogPosts';
+import { HashRouter as Router } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
