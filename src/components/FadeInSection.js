@@ -18,12 +18,12 @@ function FadeInSection({ children, threshold = 0.15, delay = 0 }) {
   );
 }
 
-function FadeInList({ items, startDelay = 0, step = 150, children }) {
+export default FadeInSection;
+
+export function FadeInList({ items, startDelay = 0, step = 150, children }) {
   return items.map((item, idx) => (
     <FadeInSection key={idx} delay={startDelay + idx * step}>
       {children(item, idx)}
     </FadeInSection>
   ));
-}
-
-export { FadeInSection, FadeInList }; 
+} 

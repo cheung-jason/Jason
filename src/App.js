@@ -1,13 +1,13 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import experiences from './data/experiences';
 import blogPosts from './data/blogPosts';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
   palette: {

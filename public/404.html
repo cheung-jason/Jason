@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+   <html>
+     <head>
+       <meta http-equiv="refresh" content="0; url=/" />
+     </head>
+     <body>
+       <script>
+         // GitHub Pages 404 redirect for React Router
+         var path = window.location.pathname;
+         var repo = "/Jason";
+         if (path.indexOf(repo) !== 0) {
+           path = repo + path;
+         }
+         window.location.replace(repo + "/#" + path.replace(repo, ""));
+       </script>
+     </body>
+   </html>

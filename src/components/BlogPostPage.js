@@ -5,38 +5,17 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ShareIcon from '@mui/icons-material/Share';
-import Button from '@mui/material/Button';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import Tooltip from '@mui/material/Tooltip';
-import TextField from '@mui/material/TextField';
-import Snackbar from '@mui/material/Snackbar';
+import blogPosts from '../data/blogPosts';
 
-function BlogPostPage({ blogPosts }) {
+function BlogPostPage() {
   const { slug } = useParams();
   const post = blogPosts.find(p => p.slug === slug);
   const [openImg, setOpenImg] = React.useState(null);
-  const [showShare, setShowShare] = React.useState(false);
-  const [linkDialogOpen, setLinkDialogOpen] = React.useState(false);
-  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
   // Sort posts by date (newest to oldest)
   const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
   const idx = sortedPosts.findIndex(p => p.slug === slug);
   const prevPost = idx > 0 ? sortedPosts[idx - 1] : null;
   const nextPost = idx < sortedPosts.length - 1 ? sortedPosts[idx + 1] : null;
-  React.useEffect(() => {
-    if (!showShare) return;
-    const handleClick = (e) => {
-      if (!e.target.closest('.share-row') && !e.target.closest('.share-btn')) {
-        setShowShare(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [showShare]);
   if (!post) {
     return (
       <Box sx={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -44,30 +23,6 @@ function BlogPostPage({ blogPosts }) {
       </Box>
     );
   }
-  const handleShareClick = () => {
-    setShowShare(v => !v);
-  };
-  const handleShareOption = (option) => {
-    const url = window.location.origin + post.link;
-    const title = encodeURIComponent('Check out this blog post!');
-    if (option === 'facebook') {
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,'_blank');
-    } else if (option === 'x') {
-      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${title}`,'_blank');
-    } else if (option === 'gmail') {
-      window.open(`https://mail.google.com/mail/?view=cm&to=&su=Check%20out%20this%20blog%20post!&body=${encodeURIComponent(url)}`,'_blank');
-    } else if (option === 'copy') {
-      setLinkDialogOpen(true);
-      setShowShare(false);
-      return;
-    }
-    setShowShare(false);
-  };
-  const handleCopyLink = () => {
-    const url = window.location.origin + post.link;
-    navigator.clipboard.writeText(url);
-    setSnackbarOpen(true);
-  };
   return (
     <Box sx={{ minHeight: '100vh', backgroundColor: '#0a192f', color: '#e6f1ff', px: { xs: 2, md: 8 }, py: 8, maxWidth: 900, mx: 'auto' }}>
       <Box sx={{ width: '100%', height: 400, overflow: 'hidden', borderRadius: 3, mb: 4 }}>
@@ -84,47 +39,9 @@ function BlogPostPage({ blogPosts }) {
           }}
         />
       </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', mb: 3 }}>
-        <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
-        <Typography variant="h3" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
-        <Typography variant="subtitle2" sx={{ color: '#a8b2d1', mb: 2 }}>{(() => { const [year, month, day] = post.date.split('-'); return new Date(year, month - 1, day).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); })()}</Typography>
-        <Button
-          className="share-btn"
-          variant="outlined"
-          startIcon={<ShareIcon />}
-          onClick={handleShareClick}
-          sx={{ color: '#90a4ae', borderColor: '#233554', mt: 1, fontWeight: 600 }}
-        >
-          Share
-        </Button>
-        {showShare && (
-          <Box className="share-row" sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 2 }}>
-            <Tooltip title="Share on Facebook"><span><IconButton onClick={() => handleShareOption('facebook')} sx={{ color: '#1877f3' }}><img src="/images/blog/facebook-icon.svg" alt="Facebook" style={{ width: 32, height: 32 }} /></IconButton></span></Tooltip>
-            <Tooltip title="Share on X"><span><IconButton onClick={() => handleShareOption('x')} sx={{ color: '#000' }}><img src="/images/blog/x-icon.svg" alt="X" style={{ width: 32, height: 32 }} /></IconButton></span></Tooltip>
-            <Tooltip title="Share on Gmail"><span><IconButton onClick={() => handleShareOption('gmail')} sx={{ color: '#EA4335' }}><img src="/images/blog/gmail-icon.svg" alt="Gmail" style={{ width: 32, height: 32 }} /></IconButton></span></Tooltip>
-            <Tooltip title="Get sharable link"><span><IconButton onClick={() => handleShareOption('copy')} sx={{ color: '#90a4ae' }}><AttachFileIcon fontSize="large" /></IconButton></span></Tooltip>
-          </Box>
-        )}
-        <Dialog open={linkDialogOpen} onClose={() => setLinkDialogOpen(false)} maxWidth="sm" fullWidth>
-          <DialogContent sx={{ background: '#0a192f', color: '#e6f1ff', textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Shareable Link</Typography>
-            <TextField
-              value={window.location.origin + post.link}
-              fullWidth
-              InputProps={{ readOnly: true, style: { color: '#e6f1ff' } }}
-              sx={{ mb: 2, input: { color: '#e6f1ff' } }}
-            />
-            <Button variant="contained" color="primary" onClick={handleCopyLink} sx={{ fontWeight: 600, mb: 1 }}>Copy Link</Button>
-          </DialogContent>
-        </Dialog>
-        <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={2000}
-          onClose={() => setSnackbarOpen(false)}
-          message="Copied!"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        />
-      </Box>
+      <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
+      <Typography variant="h3" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
+      <Typography variant="subtitle2" sx={{ color: '#a8b2d1', mb: 3 }}>{new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</Typography>
       {post.content.map((para, idx) => {
         if (Array.isArray(para)) {
           return (
@@ -168,10 +85,10 @@ function BlogPostPage({ blogPosts }) {
               <Box
                 key={img}
                 component="img"
-                src={`/images/blog/${img}.jpg`}
+                src={`${process.env.PUBLIC_URL}/images/blog/${img}.jpg`}
                 alt={`Me Pouring ${idx + 1}`}
                 sx={{ width: { xs: '100%', sm: 200, md: 220 }, height: 180, objectFit: 'cover', borderRadius: 2, boxShadow: 2, cursor: 'pointer' }}
-                onClick={() => setOpenImg(`/images/blog/${img}.jpg`)}
+                onClick={() => setOpenImg(`${process.env.PUBLIC_URL}/images/blog/${img}.jpg`)}
               />
             ))}
           </Box>
@@ -199,9 +116,6 @@ function BlogPostPage({ blogPosts }) {
             {nextPost.title}{' >'}
           </Link>
         ) : <span />}
-      </Box>
-      <Box component="footer" sx={{ width: '100%', py: 3, textAlign: 'center', backgroundColor: '#0a192f', color: '#8892b0', fontSize: '1rem', mt: 4 }}>
-        © Copyright 2025, Jason Cheung
       </Box>
     </Box>
   );

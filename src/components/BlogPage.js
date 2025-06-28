@@ -77,7 +77,7 @@ function BlogPage({ blogPosts }) {
                 <Typography variant="h6" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
                 <Typography variant="subtitle2" sx={{ color: '#a8b2d1', mb: 2 }}>{(() => { const [year, month, day] = post.date.split('-'); return new Date(year, month - 1, day).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); })()}</Typography>
                 <Box sx={{ flexGrow: 1 }} />
-                <Link href={post.link} sx={{ color: '#90a4ae', fontWeight: 600 }}>
+                <Link href={`#/blog/${post.slug}`} sx={{ color: '#90a4ae', fontWeight: 600, alignSelf: 'center' }}>
                   Read more
                 </Link>
               </Box>
