@@ -13,7 +13,7 @@ function ExperienceSection() {
   return (
     <Box id="experience" sx={{ minHeight: '40vh', backgroundColor: '#0a192f', color: '#e6f1ff', display: 'flex', flexDirection: 'column', px: { xs: 2, md: 8 }, py: { xs: 6, md: 10 }, gap: 6 }}>
       <FadeInSection delay={0}>
-      <FadeInSection delay={0}><Typography variant="h3" sx={{ mb: 3, color: '#90a4ae', fontWeight: 700 }}>/ experience</Typography></FadeInSection>
+      <FadeInSection delay={0}><Typography variant="h3" sx={{ mb: 3, color: '#90a4ae', fontWeight: 700 }}>/Experience</Typography></FadeInSection>
       </FadeInSection>
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'flex-start', justifyContent: 'center', gap: 6 }}>
         <List sx={{ minWidth: 200, maxWidth: 260, p: 0, background: 'none', borderRadius: 0, boxShadow: 'none' }}>
