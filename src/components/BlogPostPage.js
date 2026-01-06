@@ -15,13 +15,15 @@ import EmailIcon from '@mui/icons-material/Email';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import PaperclipIcon from '@mui/icons-material/AttachFile';
 
-function BlogPostPage() {
+function BlogPostPage({ blogPosts: blogPostsProp }) {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+  // Use prop if provided, otherwise fall back to import
+  const posts = blogPostsProp || blogPosts;
+  const post = posts.find(p => p.slug === slug);
   const [openImg, setOpenImg] = React.useState(null);
   const [openDialog, setOpenDialog] = React.useState(false);
   // Sort posts by date (newest to oldest)
-  const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date) - new Date(a.date));
   const idx = sortedPosts.findIndex(p => p.slug === slug);
   const prevPost = idx > 0 ? sortedPosts[idx - 1] : null;
   const nextPost = idx < sortedPosts.length - 1 ? sortedPosts[idx + 1] : null;

@@ -64,14 +64,22 @@ function BlogPage({ blogPosts }) {
         </ToggleButtonGroup>
       </Box>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'left' }}>
-        {[...blogPosts]
+        {blogPosts && [...blogPosts]
           .sort((a, b) => {
             if (sortOrder === 'desc') return new Date(b.date) - new Date(a.date);
             else return new Date(a.date) - new Date(b.date);
           })
           .map((post, idx) => (
             <Box key={post.id} sx={{ width: 320, background: '#0a192f', borderRadius: 0, boxShadow: 3, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <Box component="img" src={post.image} alt={post.title} sx={{ width: '100%', height: 180, objectFit: 'cover' }} />
+              <Box 
+                component="img" 
+                src={post.image} 
+                alt={post.title} 
+                sx={{ width: '100%', height: 180, objectFit: 'cover' }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
               <Box sx={{ p: 3, flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
                 <Typography variant="h6" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
@@ -85,7 +93,7 @@ function BlogPage({ blogPosts }) {
           ))}
       </Box>
       <Box component="footer" sx={{ width: '100%', py: 3, textAlign: 'center', backgroundColor: '#0a192f', color: '#8892b0', fontSize: '1rem', mt: 4 }}>
-        © Copyright 2025, Jason Cheung
+        © Copyright 2026, Jason Cheung
       </Box>
     </Box>
   );
