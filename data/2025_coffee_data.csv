@@ -1,0 +1,63 @@
+﻿Purchase Date,Roaster Name,Roaster City/State,Roaster Country,Coffee Name,Coffee Varietals 1,Coffee Varietals 2,Coffee Varietals 3,Coffee Origin Region,Coffee Origin Country,Farm,Producers,Altitude (MASL),Process,Roast Level,Tasting Notes 1,Tasting Notes 2,Tasting Notes 3,Tasting Notes 4,Weight (g),Price (USD),$ per 100g,Drunk as
+1/1/2025,Dak Coffee Roasters,Amsterdam,Netherlands,Darling Peach,Landrace,,,Arbegona,Ethiopia,Smallholders,Rumudamo Washing Station,,Anaerobic Washed,Light,Peach Ice Tea,Nectarine,Lavendar,,200,0,0,Pour-Over
+1/1/2025,Ilse Coffee Roasters,"North Canaan, CT",USA,Hacienda La Esmeralda Porton 5FC,Geisha,,,Boquete,Panama,El Velo,,1700,Washed,Light,Bergamont,Honeysuckle,Apricot,,125,0,0,Pour-Over
+1/1/2025,La Raza Coffee Roasters,Nuble,Chile,Colibri Tarrazu,Caturra,Catuai,,,Costa Rica,,,1510,Washed,Medium-Light,Juicy,Fuji Apple,Cocoa,Hazelnuts,340,0,0,Espresso
+1/1/2025,Florencia Y Fortunata Café,Cusco,Peru,Yesica Llanqui Ale,Limani,,,Huayopata,Peru,,Yesica Llanqui Ale,,Double Fermentation,Light-Medium,Apricot,Raisins,Caramel,,340,0,0,Pour-Over
+1/17/2025,S&W Craft Roasting,"Coatesville, IN",USA,Colombia Santa Monica Lychee Honey Process,Castillo,,,Quindío,Colombia,Santa Monica,Jairo Arcilla,1450,Honey Co-Ferment,Light,Lychee,Cherry,White Grape,Rose Tea,300,15.65,5.2,Pour-Over
+1/17/2025,S&W Craft Roasting,"Coatesville, IN",USA,Rwanda Dukorere Kawa Bukure Natural,Bourbon,,,Rulindo,Rwanda,,Dukorere Kawa Bukure Cooperative,1800,Natural,Light,Blueberries,Blackberry Jam,,,300,12.85,4.3,Pour-Over
+1/17/2025,S&W Craft Roasting,"Coatesville, IN",USA,Peru El Palto Natural,Bourbon,Catimor,Caturra,Amazonas,Peru,,Cafetaleros Juan Marco El Palto,1600,Natural,Light,Red Fruits,Blue Fruits,,,300,13.35,4.5,Pour-Over
+1/17/2025,S&W Craft Roasting,"Coatesville, IN",USA,Kenya Kaguyu AA,Batian,SL28,SL34,Kirinyaga ,Kenya,Kaguyu Factory,,1400,Washed,Light,Stonefruit,Black Tea,,,300,13.05,4.4,Pour-Over
+1/28/2025,Tiny Arms,"Lowell, MA",USA,Colombia Laboyano,Pink Bourbon,,,Huila,Colombia,Smallholders,,1600,Washed,Medium,Meyer Lemon,Rose,Swedish Fish,,284,21,7.4,Espresso
+2/27/2025,Moonwake Coffee Roasters,"San Jose, CA",USA,Finca Potosi Honey Sidra,Sidra,,,Caicedonia,Colombia,Finca Potosi,Rigoberto and Luis Eduardo Herrera,1560,Honey,Light,Cranberry,Mangosteen,Strawberry,Hibiscus,125,35,28,Pour-Over
+3/18/2025,For Five Coffee Roasters,"Queens, NY",USA,Ethiopian Gera,Blend,,,Jimma,Ethiopia,,Ethoipian Commodity Ex,2180,Washed,Medium-Light,Apple,,,,340,0,0,Espresso
+3/26/2025,Rogue Wave Coffee Roasters,"Edmonton, Alberta",Canada,Agaro Abdulrherman Ababulgu,74110,,,Limu,Ethiopia,Smallholders,Abduraman Ababulgu,1900,Washed,Light,Mandarin,Peach,Candied Ginger,Raspberry,340,17.52,5.2,Pour-Over
+3/26/2025,Rogue Wave Coffee Roasters,"Edmonton, Alberta",Canada,Papayo Paradise,Papayo,,,Huila,Colombia,Resinas,Maria Belen Diaz,1800,Washed,Light,Papaya,Blueberry,Lavendar,Tangerine,250,20.62,8.2,Pour-Over
+3/26/2025,Rogue Wave Coffee Roasters,"Edmonton, Alberta",Canada,Granja Paraiso 92 P-18,Sidra,,,Cauca,Colombia,Granja Paraiso 92,Wilton Benitez,1900,Anaerobic Washed,Light,Clementine,Rose,Blueberry,Botanicals,100,20.62,20.6,Espresso
+3/29/2025,Partners Coffee Roasters,"Brooklyn, NY",USA,Burundi Gahahe,Red Bourbon,,,Kayanza,Burundi,Smallholders,,1800,Washed,Light-Medium,Golden Raisin,Dried Fig,Honey,,340,0,0,Pour-Over
+4/20/2025,Nagadi Coffee,"Silver Spring, MD",USA,Yirgacheffe Bekele Gemeda,Heirloom,,,SNNPR,Ethiopia,,Bekele Gemeda,1780,Washed,Light-Medium,Lime,Cooked Peach,Jasmine,,226,15.9,7,Pour-Over
+5/19/2025,Ceremony Coffee,"Bethesda, MD",USA,Kenya Kayu AA,Blend,,,,,,,,Washed,Light,Peach Tea,Phubarb,Sparkly,,340,0,0,Pour-Over
+5/21/2025,September Coffee,Ottawa,Canada,Sebastian Garces Ecuador Pacamara,Pacamara,,,Quito,Ecuador,Finca Terrazas Del Pisque,Sebastian Garces,2080,Washed,Light,Juicy Plum,Lemon,Root Beer,,1000,49,4.9,Pour-Over
+5/21/2025,September Coffee,Ottawa,Canada,Pepe Jijón Sidra Natural Wave,Sidra,,,Imbabura,Ecuador,Finca Soledad,Pepe Jijon,1515,Natural Wave,Extra Light,Citrus,Red Berries,Lemonade,,200,30,15,Pour-Over
+6/12/2025,Ceremony Coffee,"Bethesda, MD",USA,Destroyer,Caturra,Pache,Bourbon,,Blend,Smallholders,,1800,Washed,Medium,Creamsicle,Peach,Bright,,907,46,5.1,Espresso
+7/1/2025,Montag Coffee Roasters,Istanbul,Turkey,Pink Sunrise,Hierloom,,,Arbegona,Ethiopia,,Asefa Dukamo,2200,Washed,Light-Medium,Pear,Jasmine Tea,Pie Crust,,250,0,0,Pour-Over
+7/4/2025,Gato Solo Coffee Roasters,Panama City,Panama,Flor Salvaje,Bourbon,Geisha,,Boquete,Panama,El Pergamino,,,Washed Fermented,Light-Medium,Orange,Pineapple,Papaya,Chamomile,350,49,14,Pour-Over
+7/29/2025,Rogue Wave Coffee Roasters,"Edmonton, Alberta",Canada,Huila Rio Negro & Iquira,Tabi,Castillo,Caturra,Huila,Colombia,Smallholders,,1600,Washed,Light,Raisin,Nectarine,Brown Sugar,Plum,1000,48,4.8,Espresso
+8/29/2025,Phil & Sebastian,Calgary,Canada,Wilson Alba Pink Bourbon,Pink Bourbon,,,Huila,Colombia,,Wilson Alba,1700,Double Fermentation Washed,Light,Mango,Lychee,Floral,,200,0,0,Espresso
+8/29/2025,Luna Coffee,Vancouver,Canada,Ngunguru AA,SL28,SL34,Ruiru 11,Nyeri,Kenya,Smallholders,Tekangu Farmers Cooperative Society,1750,Washed,Light,Melon,Lulo,Blackberry,,250,0,0,Pour-Over
+8/29/2025,Dak Coffee Roasters,Amsterdam,Netherlands,Milky Cake,Castillo,,,Cauca,Colombia,,,1730,Anaerobic Washed,Light,Cardamom,Pistachio,Vanilla Cake,Honey,250,0,0,Pour-Over
+9/18/2025,Fathers Coffee Roasters,Ostrava,Czech Republic,El Embrujo,Geisha,,,Anserma,Colombia,La Palmera,Ignacio Rodriguez,1700,Washed,Light,Raspberries,Black Tea,Chamomile,,200,0,0,Pour-Over
+9/18/2025,Square Mile Coffee Roasters,London,England,Fruit Punch,Blend,,,,Blend,,,1850,Washed,Light,Passionfruit,Blood Orange,Raspberry,,350,0,0,Pour-Over
+9/18/2025,Subtext Coffee Roasters,Toronto,Canada,Jose Pena,Pink Bourbon,,,Huila,Colombia,Finca Los Naranjos,Jose Pena,1700,Washed,Light,Tamarind,White Currant,Pomelo,,250,0,0,Pour-Over
+,September Coffee,Ottawa,Canada,Tagel Alemayehu,Landrace,,,Guji,Ethiopia,,Tagel Alemayehu,2350,Washed,Light,White Peach,Lemon-Lime,Floral,,250,0,0,Pour-Over
+,September Coffee,Ottawa,Canada,Las Perlitas,Blend,,,Huila,Colombia,Smallholders,,2100,Washed,Light,Strawberry Candy,Pear,Blackberry,,250,0,0,Pour-Over
+,Heart Coffee Roasters,"Portland, OR",USA,Colombia Luz Divia Fierro,Pink Bourbon,,,Huila,Colombia,,Luz Divia Fierro,1650,Washed,Light,Pineapple,Hibiscus,Honeycomb,,226,0,0,Pour-Over
+,Blue Bottle Coffee,"Los Angeles, CA",USA,Honduras Santa Barbara Pedro Moreno,Blend,,,Santa Barbara,Hondurus,,Pedro Moreno,900,Unknown,Light-Medium,Caramel,Plum,Grapefruit,,170,0,0,Pour-Over
+,Blue Bottle Coffee,"Los Angeles, CA",USA,Rwanda Nyamasheke Nyabumera,Blend,,,Nyamasheke,Rwanda,,,1800,Washed,Light-Medium,Lemongrass,Golden Raisin,Nectarine,,170,0,0,Pour-Over
+10/27/2025,The Native Coffee Project,"Dallas, TX",USA,Lumen Colombia,Castillo,,,Cauca,Colombia,Finca El Paraíso,Diego Bermudez,1900,"80% Washed, 20% Double Anaerobic Thermal Shock",Light,Guava,Cheesecake,Golden Delicious Apple,Pear,250,28,11.2,Pour-Over
+10/27/2025,Subtext Coffee Roasters,Toronto,Canada,Demetrio Sanchez,Geisha,,,Huila,Colombia,Finca El Arrayan,Demetrio Sanchez,2100,Washed,Light,Floral,Clementine,Stone Fruit,,250,34,13.6,Pour-Over
+10/27/2025,Prodigal Coffee,"Boulder, CO",USA,Cup of Excellence Honduras #10 Las Acacias,Pacamara,,,Santa Barbara,Hondurus,Las Acacias,Evin Moreno,,Anaerobic Washed,Light,Mango,Orange,Cotton Candy,,150,39,26,Pour-Over
+11/7/2025,Foundation Coffee Roasters,"Fairfax, VA",USA,Foundation,Blend,,,Blend,,,,,"Washed, Natural",Medium,Walnut,Honey,Lemon,,340,19,5.6,Espresso
+9/23/2025,Nomad Coffee Roasters,Barcelona,Spain,Entre Rios,Marsellesa,Obata,,Cartago,Costa Rica,Café de Tueste,Diego Robelo,,Washed,Light,Milk Chocolate,Caramel,Dates,,250,0,0,Pour-Over
+12/28/2025,Passenger Coffee,"Lancaster, PA",USA,Agaro,Blend,,,Jimma,Ethiopia,,Mike Mamo and Addis Exporter,,Washed,Light,Bergamont,Peach,Meyer Lemon,,250,19.8,7.9,Pour-Over
+12/28/2025,Passenger Coffee,"Lancaster, PA",USA,Israel Hernandez,Geisha,,,Tolima,Colombia,,Israel Hernandez,1830,Washed,Light,Florals,Vanilla,Citrus,,250,33.25,13.3,Pour-Over
+12/28/2025,Passenger Coffee,"Lancaster, PA",USA,Cusco,Blend,,,Apaneca,El Salvador,,Carlos and Julie Batres,,Washed,Light,Clementine,Cocoa,Toasted Nuts,,250,19.8,7.9,Espresso
+12/28/2025,Passenger Coffee,"Lancaster, PA",USA,Montecarlos,Blend,,,Cusco,Peru,Smallholder Farmers of La Convención,,,Washed,Light,Chocolate,Marzipan,Red Fruit,,250,20.25,8.1,Espresso
+12/28/2025,Passenger Coffee,"Lancaster, PA",USA,Ivan Gutierrez,SL28,,,San Marcos de Tarrazu,Costa Rica,,Ivan Gutierrez,1960,Washed,Light,Toffee,Cranberry,Citrus,,250,48.5,19.4,Pour-Over
+12/28/2025,Guido Coffee,Bucharest,Romania,La Prosperidad,Geisha,,,Cajamarca,Peru,Cooperativa La Prosperidad,,1800,Washed,Light,Jasmine,Apricot,White Tea,,200,17.27,8.6,Pour-Over
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,13513,,,,,,,,,
