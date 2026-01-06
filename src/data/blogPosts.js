@@ -64,6 +64,33 @@ const blogPosts = [
       "Tasting notes are cool, I guess I like my coffees with Florals and Kiwi and Honeydew. If you look carefully, I still drink coffee that labels with chocolate and nuts, and caramerl. Cheer's to a great 2024 and here's to a great 2025!",
       { type: 'link', text: "p.s Here's raw data file for y'all nerds out there", href: process.env.PUBLIC_URL + '/data/2024_coffee_data.csv' },
     ]
+  },
+  {
+    id: 3,
+    title: 'Coffee Rewind: 2025',
+    image: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/Oragami Air.png',
+    category: 'Coffee',
+    link: '/blog/CoffeeRewind-2025',
+    slug: 'CoffeeRewind-2025',
+    date: '2026-01-04',
+    content: [
+      "In 2025, I logged 45 bags of coffee which equates to a 25% increase in consumption from last year which is awesome!",
+      "I also purchased a xBloom Studio which saved myself countless mornings of manual brewing and allowed me to kickstart my workday. My preference for brewing changed from high temperature high extraction brews to lower temperature lower extraction minimal agitation. I alternated 50/50 between the April dripper and the Oragami dripper and I would say I'm content with both. You can find my go-to brew recipe in one of the older blog posts.",
+      "13.5kg coffee consumed.\n45 bags collected.\n20 of the 45 bags were gifted.\n28 different roasters.\n11 unique roasting countries.\n13 unique coffee origin countries.\n25 unique coffee varietals.\n49% of beans consumed are washed light roast coffee.\nPeach is the most popular flavor note (7 bags).",
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/coffee_rewind_2025.jpg', alt: 'coffee_rewind_2025' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/most_purchased_coffee_2025.png', alt: 'most_purchased_coffee_2025' },
+      "I think Passenger Coffee is really good and that's why they're on top of the list. However, I want to say my favorite coffee for 2025 is the Darling Peach roasted by Dak from the Netherlands. It was really hard to choose my favorite roaster for this year but if I had to choose it would have to be between Subtext Coffee Roasters, Fathers Coffee Roasters, or Passenger Coffee. In addition, this year I did several repeat orders from roasters I purchased from last year and I had a sense of what exactly I wanted to order. Several international roasters appeared for the first time on my brew bar and yielded decent brews. I'll chalk it up to my friends and family not knowing my style of beans I prefer. Overall a great experience and everything looks quite on trend for my preferences and I'll mention in detail later in the post.",
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/roaster_country_2025.png', alt: 'roaster_country_2025' },
+      "Not super suprising most of the coffee are from the United States. This year I tried to be intentional with my purchases and order from roasters within the states to try first. There were also tariff issues which cause some complications ordering from Canada and Europe.",
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/coffee_farm_country_2025.png', alt: 'coffee_farm_country_2025' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/top_coffee_varietals_2025.png', alt: 'top_coffee_varietals_2025' },
+      "If you've read my other post you would know my favorite coffee are Pink Bourbon from Colombia and these charts provide more proof. I think many would agree Colombian and Ethiopian coffee dominate the market and this year Ethiopia edged Colombia for me.\n Last year I tried the KaffeBox advent calendar which highlighted coffee from scandinavian roasters. I tried alot of SL28 and SL34 for the first time that didnt leave the best impression for me. This year the SL28 crops we actually really good and now I have to figure out why. To summarize, in 2025, Pink Bourbon > Geisha > SL28 > the rest.",
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/heatmap_processing_roastlvl_2025.png', alt: 'heatmap_processing_roastlvl_2025' },
+      "This is not good, I said I wanted to expand more palate with more varieties and roast level but I think the outcome was a big flop. I can say the washed coffee were delicious though :), not too sad about that.",
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/blog/CoffeeRewind-2025/coffee_flavor_notes_wordcloud_2025.png', alt: 'coffee_flavor_notes_wordcloud_2025' },
+      "Lets see if I can try something other then stonefruits and citrus-y flavor notes next year haha. Welp, let me know what was your favorite drink of the year. Cheers and happy 2026!",
+      { type: 'link', text: "Raw data file here", href: process.env.PUBLIC_URL + '/data/2025_coffee_data.csv' },
+    ]
   }
 ];
 

@@ -151,13 +151,21 @@ function BlogPostPage() {
             </ul>
           );
         } else if (typeof para === 'object' && para.type === 'image') {
+          // Make images larger for blog post id 3
+          const isLargeImage = post.id === 3;
           return (
             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center', my: 3 }}>
               <Box
                 component="img"
                 src={para.src}
                 alt={para.alt}
-                sx={{ maxWidth: '100%', maxHeight: 350, borderRadius: 2, boxShadow: 2 }}
+                sx={{ 
+                  maxWidth: '100%', 
+                  maxHeight: isLargeImage ? 600 : 350, 
+                  borderRadius: 2, 
+                  boxShadow: 2,
+                  width: isLargeImage ? '100%' : 'auto'
+                }}
               />
             </Box>
           );
@@ -170,6 +178,18 @@ function BlogPostPage() {
             </Typography>
           );
         } else {
+          // Handle strings with newlines - split them into separate paragraphs
+          if (typeof para === 'string' && para.includes('\n')) {
+            return (
+              <Box key={idx} sx={{ mb: 2 }}>
+                {para.split('\n').filter(line => line.trim()).map((line, lineIdx) => (
+                  <Typography key={lineIdx} variant="body1" sx={{ color: '#a8b2d1', mb: 1, fontSize: '1.15rem' }}>
+                    {line.trim()}
+                  </Typography>
+                ))}
+              </Box>
+            );
+          }
           return (
             <Typography key={idx} variant="body1" sx={{ color: '#a8b2d1', mb: 2, fontSize: '1.15rem' }}>
               {para}

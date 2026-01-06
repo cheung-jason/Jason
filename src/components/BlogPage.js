@@ -70,7 +70,7 @@ function BlogPage({ blogPosts }) {
             else return new Date(a.date) - new Date(b.date);
           })
           .map((post, idx) => (
-            <Box key={post.id} sx={{ width: 320, background: '#0a192f', borderRadius: 3, boxShadow: 3, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <Box key={post.id} sx={{ width: 320, background: '#0a192f', borderRadius: 0, boxShadow: 3, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <Box component="img" src={post.image} alt={post.title} sx={{ width: '100%', height: 180, objectFit: 'cover' }} />
               <Box sx={{ p: 3, flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
