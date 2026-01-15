@@ -1,63 +1,130 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import FadeInSection, { FadeInList } from './FadeInSection';
 import experiences from '../data/experiences';
 
-function ExperienceSection() {
-  const [selected, setSelected] = React.useState(0);
+function ExperienceSection({ mode }) {
   return (
-    <Box id="experience" sx={{ minHeight: '40vh', backgroundColor: '#0a192f', color: '#e6f1ff', display: 'flex', flexDirection: 'column', px: { xs: 2, md: 8 }, py: { xs: 6, md: 10 }, gap: 6 }}>
-      <FadeInSection delay={0}>
-      <FadeInSection delay={0}><Typography variant="h3" sx={{ mb: 3, color: '#90a4ae', fontWeight: 700 }}>Experience</Typography></FadeInSection>
-      </FadeInSection>
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'flex-start', justifyContent: 'center', gap: 6 }}>
-        <List sx={{ minWidth: 200, maxWidth: 260, p: 0, background: 'none', borderRadius: 0, boxShadow: 'none' }}>
-          {experiences.map((exp, idx) => (
-            <FadeInSection key={exp.company} delay={idx * 100}>
-              <ListItem disablePadding sx={{ cursor: 'pointer' }} onClick={() => setSelected(idx)}>
-                <ListItemText
-                  primary={
-                    <span
-                      style={{
-                        color: selected === idx ? '#90a4ae' : '#a8b2d1',
-                        fontWeight: selected === idx ? 700 : 500,
-                        transition: 'color 0.2s, font-weight 0.2s'
-                      }}
-                    >
-                      {exp.company.split('–')[0]}
-                    </span>
-                  }
-                />
-              </ListItem>
-            </FadeInSection>
-          ))}
-        </List>
-        <Box sx={{ flex: 1, ml: { md: 6 }, mt: { xs: 4, md: 0 }, p: 0, minWidth: 0 }}>
-          <FadeInSection delay={100}>
-            <Typography variant="h6" sx={{ color: '#e6f1ff', mb: 1 }}>
-             {experiences[selected].title} @ <span style={{ color: '#90a4ae' }}>{experiences[selected].company.split('–')[0]}</span>
-            </Typography>
-          </FadeInSection>
-          <FadeInSection delay={150}>
-            <Typography variant="subtitle1" sx={{ color: '#a8b2d1', mb: 1 }}>
-              {experiences[selected].date}
-            </Typography>
-          </FadeInSection>
-          <FadeInSection delay={300}>
-            <Divider sx={{ background: '#90a4ae', mb: 2, opacity: 0.3 }} />
-          </FadeInSection>
-          <FadeInList items={experiences[selected].details} startDelay={400} step={80}>
-            {(item, i) => (
-              <Typography component="li" sx={{ mb: 1, color: '#e6f1ff', fontSize: '1rem', pl: 2, listStyle: 'disc' }}>
-                {item}
-              </Typography>
-            )}
-          </FadeInList>
+    <Box id="experience" sx={{ minHeight: '40vh', backgroundColor: mode === 'light' ? '#F1F1F1' : '#000000', color: mode === 'light' ? '#666666' : '#b0b0b0', display: 'flex', flexDirection: 'column', alignItems: 'center', px: { xs: 0, md: 0 }, py: { xs: 0, md: 0 }, gap: 6 }}>
+      <Box sx={{ maxWidth: 1200, width: '100%' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
+          <Typography variant="body1" sx={{ fontSize: { xs: '1rem', md: '1.15rem' }, color: mode === 'light' ? '#999999' : '#ffffff', whiteSpace: 'nowrap' }}>
+            Work
+          </Typography>
+          <Box sx={{ flex: 1, height: '1px', backgroundColor: mode === 'light' ? '#d0d0d0' : '#ffffff' }} />
+        </Box>
+        
+        {/* Vertical Timeline - Centered with Alternating Cards */}
+        <Box sx={{ position: 'relative' }}>
+          {/* Timeline Line with Gradient */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              top: '8px',
+              bottom: 0,
+              width: '4px',
+              background: 'linear-gradient(180deg, #3a3a3a 0%, #6b7280 30%, #9ca3af 60%, #d1d5db 100%)',
+              borderRadius: '2px',
+              display: { xs: 'none', md: 'block' },
+            }}
+          />
+          
+          {/* Mobile Timeline Line */}
+          <Box
+            sx={{
+              position: 'absolute',
+              left: '7px',
+              top: '8px',
+              bottom: 0,
+              width: '3px',
+              background: 'linear-gradient(180deg, #3a3a3a 0%, #6b7280 30%, #9ca3af 60%, #d1d5db 100%)',
+              borderRadius: '2px',
+              display: { xs: 'block', md: 'none' },
+            }}
+          />
+          
+          {experiences.map((exp, idx) => {
+            const isLeft = idx % 2 === 0;
+            
+            return (
+              <Box 
+                key={exp.company}
+                sx={{ 
+                  position: 'relative', 
+                  mb: 4, 
+                  display: 'flex',
+                  justifyContent: { xs: 'flex-start', md: isLeft ? 'flex-start' : 'flex-end' },
+                  pl: { xs: 4, md: 0 },
+                  '&:last-child': { mb: 0 }
+                }}
+              >
+                  {/* Timeline Dot */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      left: { xs: '-3px', md: '50%' },
+                      transform: { xs: 'none', md: 'translateX(-50%)' },
+                      top: '20px',
+                      width: { xs: '20px', md: '28px' },
+                      height: { xs: '20px', md: '28px' },
+                      borderRadius: '50%',
+                      background: mode === 'light' 
+                        ? 'linear-gradient(135deg, #4b5563 0%, #6b7280 100%)'
+                        : 'linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%)',
+                      border: mode === 'light' ? '4px solid #F1F1F1' : '4px solid #000000',
+                      boxShadow: mode === 'light' ? '0 0 0 2px #e0e0e0' : '0 0 0 2px #ffffff',
+                      zIndex: 1,
+                    }}
+                  />
+                  
+                  {/* Content Card */}
+                  <Box
+                    sx={{
+                      width: { xs: '100%', md: 'calc(50% - 60px)' },
+                      backgroundColor: mode === 'light' ? '#F1F1F1' : '#000000',
+                      border: mode === 'light' ? '1px solid #d0d0d0' : '1px solid #ffffff',
+                      borderRadius: 2,
+                      p: 2,
+                      transition: 'transform 0.3s, border-color 0.3s',
+                      '&:hover': {
+                        transform: { xs: 'translateX(4px)', md: isLeft ? 'translateX(-4px)' : 'translateX(4px)' },
+                        borderColor: mode === 'light' ? '#999999' : '#666666',
+                      },
+                    }}
+                  >
+                    <Typography variant="subtitle2" sx={{ color: mode === 'light' ? '#6b7280' : '#ffffff', mb: 0.3, fontWeight: 600, fontSize: '0.85rem' }}>
+                      {exp.date}
+                    </Typography>
+                    <Typography variant="h6" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 0.3, fontWeight: 600, fontSize: '1.1rem' }}>
+                      {exp.title}
+                    </Typography>
+                    <Typography variant="subtitle1" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 1.5, fontWeight: 500, fontSize: '0.95rem' }}>
+                      {exp.company}
+                    </Typography>
+                    
+                    <Box component="ul" sx={{ m: 0, pl: 0, listStyleType: 'none' }}>
+                      {exp.details.map((detail, i) => (
+                        <Typography
+                          key={i}
+                          component="li"
+                          sx={{
+                            mb: 0.75,
+                            color: mode === 'light' ? '#666666' : '#ffffff',
+                            fontSize: '0.9rem',
+                            lineHeight: 1.5,
+                            '&:last-child': { mb: 0 },
+                          }}
+                        >
+                          {detail}
+                        </Typography>
+                      ))}
+                    </Box>
+                  </Box>
+                </Box>
+            );
+          })}
         </Box>
       </Box>
     </Box>

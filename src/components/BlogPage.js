@@ -2,99 +2,119 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import ShareIcon from '@mui/icons-material/Share';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import Tooltip from '@mui/material/Tooltip';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Breadcrumb from './Breadcrumb';
+import Footer from './Footer';
 
-function BlogPage({ blogPosts }) {
-  const [showShareIdx, setShowShareIdx] = React.useState(null);
-  const [shareUrl, setShareUrl] = React.useState('');
-  const [sortOrder, setSortOrder] = React.useState('desc'); // 'desc' for newest to oldest, 'asc' for oldest to newest
-
-  React.useEffect(() => {
-    if (showShareIdx === null) return;
-    const handleClick = (e) => {
-      if (!e.target.closest('.share-row') && !e.target.closest('.share-btn')) {
-        setShowShareIdx(null);
-      }
-    };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [showShareIdx]);
-
-  const handleShareClick = (idx, url) => {
-    setShowShareIdx(idx === showShareIdx ? null : idx);
-    setShareUrl(url);
-  };
-  const handleShareOption = (option, url) => {
-    const fullUrl = window.location.origin + url;
-    const title = encodeURIComponent('Check out this blog post!');
-    if (option === 'facebook') {
-      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fullUrl)}`,'_blank');
-    } else if (option === 'x') {
-      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(fullUrl)}&text=${title}`,'_blank');
-    } else if (option === 'gmail') {
-      window.open(`https://mail.google.com/mail/?view=cm&to=&su=Check%20out%20this%20blog%20post!&body=${encodeURIComponent(fullUrl)}`,'_blank');
-    } else if (option === 'copy') {
-      navigator.clipboard.writeText(fullUrl);
-    }
-    setShowShareIdx(null);
-  };
+function BlogPage({ blogPosts, mode }) {
+  const [sortOrder, setSortOrder] = React.useState('desc');
 
   const handleSortChange = (event, newOrder) => {
     if (newOrder) setSortOrder(newOrder);
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: '#0a192f', color: '#e6f1ff', px: { xs: 2, md: 8 }, py: 8 }}>
-      <Box sx={{ mb: 4, display: 'flex', justifyContent: 'flex-end' }}>
-        <ToggleButtonGroup
-          value={sortOrder}
-          exclusive
-          onChange={handleSortChange}
-          size="small"
-          sx={{ background: '#112240', borderRadius: 2 }}
-        >
-          <ToggleButton value="desc" sx={{ color: '#ccd6f6', fontWeight: 600 }}>Newest to Oldest</ToggleButton>
-          <ToggleButton value="asc" sx={{ color: '#ccd6f6', fontWeight: 600 }}>Oldest to Newest</ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'left' }}>
-        {blogPosts && [...blogPosts]
-          .sort((a, b) => {
-            if (sortOrder === 'desc') return new Date(b.date) - new Date(a.date);
-            else return new Date(a.date) - new Date(b.date);
-          })
-          .map((post, idx) => (
-            <Box key={post.id} sx={{ width: 320, background: '#0a192f', borderRadius: 0, boxShadow: 3, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-              <Box 
-                component="img" 
-                src={post.image} 
-                alt={post.title} 
-                sx={{ width: '100%', height: 180, objectFit: 'cover' }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-              <Box sx={{ p: 3, flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
-                <Typography variant="h6" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
-                <Typography variant="subtitle2" sx={{ color: '#a8b2d1', mb: 2 }}>{(() => { const [year, month, day] = post.date.split('-'); return new Date(year, month - 1, day).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); })()}</Typography>
-                <Box sx={{ flexGrow: 1 }} />
-                <Link href={`#/blog/${post.slug}`} sx={{ color: '#90a4ae', fontWeight: 600, alignSelf: 'center' }}>
-                  Read more
-                </Link>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: mode === 'light' ? 'linear-gradient(to bottom, #ffffff 0%, #ffffff 13%, #F1F1F1 13%, #F1F1F1 100%)' : '#000000', color: mode === 'light' ? '#666666' : '#b0b0b0' }}>
+      <Box sx={{ flex: 1, px: { xs: 2, md: 8 }, py: 8, maxWidth: 1400, mx: 'auto', width: '100%' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+          <Breadcrumb mode={mode} />
+        </Box>
+        <Typography variant="h2" sx={{ mb: 4, color: mode === 'light' ? '#000000' : '#ffffff', fontWeight: 700, textAlign: 'left' }}>
+          Articles
+        </Typography>
+        <Box sx={{ mb: 4, display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 1 }}>
+          <Typography variant="body2" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mr: 1 }}>Sort by:</Typography>
+          <ToggleButtonGroup
+            value={sortOrder}
+            exclusive
+            onChange={handleSortChange}
+            size="small"
+            sx={{ 
+              border: 'none',
+              '& .MuiToggleButtonGroup-grouped': {
+                border: 'none',
+                borderRadius: '20px !important',
+                mx: 0.5,
+                px: 2,
+                py: 0.5,
+                textTransform: 'none',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                color: mode === 'light' ? '#666666' : '#ffffff',
+                backgroundColor: 'transparent',
+                '&:hover': {
+                  backgroundColor: mode === 'light' ? '#e8e8e8' : '#1a1a1a',
+                },
+                '&.Mui-selected': {
+                  backgroundColor: mode === 'light' ? '#000000' : '#ffffff',
+                  color: mode === 'light' ? '#ffffff' : '#000000',
+                  '&:hover': {
+                    backgroundColor: mode === 'light' ? '#333333' : '#e0e0e0',
+                  }
+                }
+              }
+            }}
+          >
+            <ToggleButton value="desc">Newest</ToggleButton>
+            <ToggleButton value="asc">Oldest</ToggleButton>
+          </ToggleButtonGroup>
+        </Box>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
+          {blogPosts && [...blogPosts]
+            .sort((a, b) => {
+              if (sortOrder === 'desc') return new Date(b.date) - new Date(a.date);
+              else return new Date(a.date) - new Date(b.date);
+            })
+            .map((post, idx) => (
+              <Box key={post.id} sx={{ width: 320, background: mode === 'light' ? '#ffffff' : '#1a1a1a', borderRadius: 0, boxShadow: 3, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                <Box 
+                  component="img" 
+                  src={post.image} 
+                  alt={post.title} 
+                  sx={{ width: '100%', height: 180, objectFit: 'cover' }}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+                <Box sx={{ p: 3, flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <Typography variant="subtitle2" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 1 }}>{post.category}</Typography>
+                  <Typography variant="h6" sx={{ color: mode === 'light' ? '#000000' : '#ffffff', mb: 1 }}>{post.title}</Typography>
+                  <Typography variant="subtitle2" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 2 }}>{(() => { const [year, month, day] = post.date.split('-'); return new Date(year, month - 1, day).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }); })()}</Typography>
+                  <Box sx={{ flexGrow: 1 }} />
+                  <Link 
+                    href={`#/blog/${post.slug}`} 
+                    sx={{ 
+                      color: mode === 'light' ? '#666666' : '#ffffff', 
+                      fontWeight: 600, 
+                      alignSelf: 'center', 
+                      display: 'inline-flex', 
+                      alignItems: 'center', 
+                      gap: 0.5,
+                      textDecoration: 'none',
+                      '&:hover .arrow': {
+                        transform: 'translateX(4px)',
+                      }
+                    }}
+                  >
+                    Read more
+                    <Box 
+                      component="span" 
+                      className="arrow"
+                      sx={{ 
+                        display: 'inline-block',
+                        transition: 'transform 0.2s ease',
+                      }}
+                    >
+                      →
+                    </Box>
+                  </Link>
+                </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
+        </Box>
       </Box>
-      <Box component="footer" sx={{ width: '100%', py: 3, textAlign: 'center', backgroundColor: '#0a192f', color: '#8892b0', fontSize: '1rem', mt: 4 }}>
-        © Copyright 2026, Jason Cheung
-      </Box>
+      <Footer mode={mode} />
     </Box>
   );
 }

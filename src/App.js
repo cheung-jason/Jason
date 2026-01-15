@@ -7,36 +7,36 @@ import BlogPage from './components/BlogPage';
 import BlogPostPage from './components/BlogPostPage';
 import experiences from './data/experiences';
 import blogPosts from './data/blogPosts';
+import { interests } from './data/interests';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-const theme = createTheme({
+const getTheme = (mode) => createTheme({
   palette: {
-    mode: 'dark',
+    mode: mode,
     primary: {
       main: '#90a4ae',
     },
     background: {
-      default: '#0a192f',
-      paper: '#112240',
+      default: mode === 'light' ? '#ffffff' : '#000000',
+      paper: mode === 'light' ? '#ffffff' : '#000000',
     },
     text: {
-      primary: '#e6f1ff',
-      secondary: '#8892b0',
+      primary: mode === 'light' ? '#000000' : '#ffffff',
+      secondary: mode === 'light' ? '#666666' : '#ffffff',
     },
   },
   typography: {
-    fontFamily: 'Aptos, Arial, sans-serif',
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    h2: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    h3: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    h4: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    h5: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    h6: { color: mode === 'light' ? '#000000' : '#ffffff' },
+    body1: { color: mode === 'light' ? '#666666' : '#ffffff' },
+    body2: { color: mode === 'light' ? '#666666' : '#ffffff' },
   },
 });
-
-// Add shake animation style
-const shakeKeyframes = `@keyframes shake { 0% { transform: translate(0, 0) rotate(0deg); } 10% { transform: translate(-2px, 2px) rotate(-2deg); } 20% { transform: translate(-4px, 0) rotate(2deg); } 30% { transform: translate(4px, 2px) rotate(0deg); } 40% { transform: translate(2px, -2px) rotate(2deg); } 50% { transform: translate(-2px, 2px) rotate(-2deg); } 60% { transform: translate(-4px, 0) rotate(2deg); } 70% { transform: translate(4px, 0) rotate(0deg); } 80% { transform: translate(2px, -2px) rotate(2deg); } 90% { transform: translate(-2px, 2px) rotate(-2deg); } 100% { transform: translate(0, 0) rotate(0deg); } }`;
-if (typeof document !== 'undefined' && !document.getElementById('shake-keyframes')) {
-  const style = document.createElement('style');
-  style.id = 'shake-keyframes';
-  style.innerHTML = shakeKeyframes;
-  document.head.appendChild(style);
-}
 
 function scrollToSection(id) {
   setTimeout(() => {
@@ -53,15 +53,35 @@ function scrollToSection(id) {
 }
 
 function App() {
+  const [mode, setMode] = React.useState(() => {
+    const savedMode = localStorage.getItem('themeMode');
+    return savedMode || 'light';
+  });
+
+  const toggleTheme = () => {
+    const newMode = mode === 'light' ? 'dark' : 'light';
+    setMode(newMode);
+    localStorage.setItem('themeMode', newMode);
+  };
+
+  const theme = React.useMemo(() => getTheme(mode), [mode]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <NavBar blogPosts={blogPosts} experiences={experiences} scrollToSection={scrollToSection} />
+        <NavBar 
+          blogPosts={blogPosts} 
+          experiences={experiences} 
+          interests={interests} 
+          scrollToSection={scrollToSection}
+          mode={mode}
+          toggleTheme={toggleTheme}
+        />
         <Routes>
-          <Route path="/" element={<HomePage experiences={experiences} scrollToSection={scrollToSection} />} />
-          <Route path="/blog" element={<BlogPage blogPosts={blogPosts} />} />
-          <Route path="/blog/:slug" element={<BlogPostPage blogPosts={blogPosts} />} />
+          <Route path="/" element={<HomePage experiences={experiences} scrollToSection={scrollToSection} mode={mode} />} />
+          <Route path="/blog" element={<BlogPage blogPosts={blogPosts} mode={mode} />} />
+          <Route path="/blog/:slug" element={<BlogPostPage blogPosts={blogPosts} mode={mode} />} />
         </Routes>
       </Router>
     </ThemeProvider>

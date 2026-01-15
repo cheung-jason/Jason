@@ -8,14 +8,11 @@ import DialogContent from '@mui/material/DialogContent';
 import blogPosts from '../data/blogPosts';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import Popover from '@mui/material/Popover';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import EmailIcon from '@mui/icons-material/Email';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import PaperclipIcon from '@mui/icons-material/AttachFile';
+import Breadcrumb from './Breadcrumb';
+import Footer from './Footer';
 
-function BlogPostPage({ blogPosts: blogPostsProp }) {
+function BlogPostPage({ blogPosts: blogPostsProp, mode }) {
   const { slug } = useParams();
   // Use prop if provided, otherwise fall back to import
   const posts = blogPostsProp || blogPosts;
@@ -30,30 +27,34 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
   if (!post) {
     return (
       <Box sx={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography variant="h4" color="#90a4ae">Blog post not found.</Typography>
+        <Typography variant="h4" sx={{ color: mode === 'light' ? '#666666' : '#ffffff' }}>Blog post not found.</Typography>
       </Box>
     );
   }
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: '#0a192f', color: '#e6f1ff', px: { xs: 2, md: 8 }, py: 8, maxWidth: 900, mx: 'auto' }}>
-      <Box sx={{ width: '100%', height: 400, overflow: 'hidden', borderRadius: 3, mb: 4 }}>
-        <Box
-          component="img"
-          src={post.image}
-          alt={post.title}
-          sx={{
-            width: '100%',
-            height: 500,
-            objectFit: 'cover',
-            objectPosition: 'top',
-            display: 'block'
-          }}
-        />
-      </Box>
+    <Box sx={{ minHeight: '100vh', backgroundColor: mode === 'light' ? '#F1F1F1' : '#000000', color: mode === 'light' ? '#666666' : '#b0b0b0' }}>
+      <Box sx={{ px: { xs: 2, md: 8 }, py: 8, maxWidth: 900, mx: 'auto' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+          <Breadcrumb blogPostTitle={post.title} mode={mode} />
+        </Box>
+        <Box sx={{ width: '100%', overflow: 'hidden', borderRadius: 3, mb: 4 }}>
+          <Box
+            component="img"
+            src={post.image}
+            alt={post.title}
+            sx={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              display: 'block'
+            }}
+          />
+        </Box>
       <Box sx={{ textAlign: 'center', mb: 4 }}>
-        <Typography variant="subtitle2" sx={{ color: '#90a4ae', mb: 1 }}>{post.category}</Typography>
-        <Typography variant="h3" sx={{ color: '#ccd6f6', mb: 1 }}>{post.title}</Typography>
-        <Typography variant="subtitle2" sx={{ color: '#a8b2d1', mb: 1 }}>{new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</Typography>
+        <Typography variant="subtitle2" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 1 }}>{post.category}</Typography>
+        <Typography variant="h3" sx={{ color: mode === 'light' ? '#000000' : '#ffffff', mb: 1 }}>{post.title}</Typography>
+        <Typography variant="subtitle2" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 1 }}>{new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 2 }}>
           <Tooltip title="Share on Facebook">
             <IconButton
@@ -90,21 +91,21 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
           </Tooltip>
         </Box>
         <Dialog open={openDialog} onClose={() => setOpenDialog(false)} maxWidth="sm" fullWidth>
-          <DialogContent sx={{ background: '#0a192f', textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ color: '#ccd6f6', mb: 2 }}>Shareable Link</Typography>
+          <DialogContent sx={{ background: mode === 'light' ? '#ffffff' : '#1a1a1a', textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ color: mode === 'light' ? '#000000' : '#ffffff', mb: 2 }}>Shareable Link</Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, mb: 2 }}>
               <input
                 type="text"
                 value={window.location.href}
                 readOnly
-                style={{ width: '80%', padding: 8, borderRadius: 4, border: '1px solid #90a4ae', background: '#112240', color: '#e6f1ff', fontSize: 16 }}
+                style={{ width: '80%', padding: 8, borderRadius: 4, border: mode === 'light' ? '1px solid #cccccc' : '1px solid #333333', background: mode === 'light' ? '#ffffff' : '#0a0a0a', color: mode === 'light' ? '#666666' : '#b0b0b0', fontSize: 16 }}
               />
               <Tooltip title="Copy Link">
                 <IconButton
                   onClick={() => {
                     navigator.clipboard.writeText(window.location.href);
                   }}
-                  sx={{ color: '#90a4ae' }}
+                  sx={{ color: mode === 'light' ? '#666666' : '#ffffff' }}
                 >
                   <PaperclipIcon />
                 </IconButton>
@@ -148,13 +149,12 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
           return (
             <ul key={idx} style={{ marginLeft: 24, marginBottom: 16 }}>
               {para.map((step, i) => (
-                <li key={i} style={{ color: '#a8b2d1', fontSize: '1.1rem', fontWeight: 700 }}>{step}</li>
+                <li key={i} style={{ color: mode === 'light' ? '#666666' : '#ffffff', fontSize: '1.1rem', fontWeight: 400 }}>{step}</li>
               ))}
             </ul>
           );
         } else if (typeof para === 'object' && para.type === 'image') {
-          // Make images larger for blog post id 3
-          const isLargeImage = post.id === 3;
+          const isLargeImage = post.largeImages;
           return (
             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center', my: 3 }}>
               <Box
@@ -173,8 +173,8 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
           );
         } else if (typeof para === 'object' && para.type === 'link') {
           return (
-            <Typography key={idx} variant="body1" sx={{ color: '#a8b2d1', mb: 2, fontSize: '1.15rem' }}>
-              <Link href={para.href} target="_blank" rel="noopener noreferrer" sx={{ color: '#90a4ae', fontWeight: 600 }}>
+            <Typography key={idx} variant="body1" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 2, fontSize: '1.15rem' }}>
+              <Link href={para.href} target="_blank" rel="noopener noreferrer" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', fontWeight: 600 }}>
                 {para.text}
               </Link>
             </Typography>
@@ -185,7 +185,7 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
             return (
               <Box key={idx} sx={{ mb: 2 }}>
                 {para.split('\n').filter(line => line.trim()).map((line, lineIdx) => (
-                  <Typography key={lineIdx} variant="body1" sx={{ color: '#a8b2d1', mb: 1, fontSize: '1.15rem' }}>
+                  <Typography key={lineIdx} variant="body1" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 1, fontSize: '1.15rem' }}>
                     {line.trim()}
                   </Typography>
                 ))}
@@ -193,7 +193,7 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
             );
           }
           return (
-            <Typography key={idx} variant="body1" sx={{ color: '#a8b2d1', mb: 2, fontSize: '1.15rem' }}>
+            <Typography key={idx} variant="body1" sx={{ color: mode === 'light' ? '#666666' : '#ffffff', mb: 2, fontSize: '1.15rem' }}>
               {para}
             </Typography>
           );
@@ -214,7 +214,7 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
             ))}
           </Box>
           <Dialog open={!!openImg} onClose={() => setOpenImg(null)} maxWidth="md">
-            <DialogContent sx={{ p: 0, background: '#0a192f' }}>
+            <DialogContent sx={{ p: 0, background: mode === 'light' ? '#ffffff' : '#1a1a1a' }}>
               <Box
                 component="img"
                 src={openImg}
@@ -228,79 +228,19 @@ function BlogPostPage({ blogPosts: blogPostsProp }) {
       {/* Previous/Next navigation */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 8 }}>
         {prevPost ? (
-          <Link href={`#/blog/${prevPost.slug}`} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
-            {'< '}{prevPost.title}
+          <Link href={`#/blog/${prevPost.slug}`} sx={{ color: mode === 'light' ? '#666666' : '#b0b0b0', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
+            {'← '}{prevPost.title}
           </Link>
         ) : <span />}
         {nextPost ? (
-          <Link href={`#/blog/${nextPost.slug}`} sx={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
-            {nextPost.title}{' >'}
+          <Link href={`#/blog/${nextPost.slug}`} sx={{ color: mode === 'light' ? '#666666' : '#b0b0b0', fontWeight: 600, fontSize: '1.1rem', display: 'flex', alignItems: 'center' }}>
+            {nextPost.title}{' →'}
           </Link>
         ) : <span />}
       </Box>
+      </Box>
+      <Footer mode={mode} />
     </Box>
-  );
-}
-
-function ShareButton({ url, title }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const handleClick = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
-  const open = Boolean(anchorEl);
-  return (
-    <>
-      <IconButton onClick={handleClick} sx={{ ml: 1 }}>
-        <ContentCopyIcon />
-      </IconButton>
-      <Popover
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-      >
-        <Box sx={{ display: 'flex', flexDirection: 'row', p: 1 }}>
-          <Tooltip title="Share on Facebook">
-            <IconButton
-              component="a"
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FacebookIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Share on X">
-            <IconButton
-              component="a"
-              href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <TwitterIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Share via Email">
-            <IconButton
-              component="a"
-              href={`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`}
-            >
-              <EmailIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Copy Link">
-            <IconButton
-              onClick={() => {
-                navigator.clipboard.writeText(url);
-                handleClose();
-              }}
-            >
-              <ContentCopyIcon />
-            </IconButton>
-          </Tooltip>
-        </Box>
-      </Popover>
-    </>
   );
 }
 

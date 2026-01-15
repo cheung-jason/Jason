@@ -72,6 +72,7 @@ const blogPosts = [
     category: 'Coffee',
     link: '/blog/CoffeeRewind-2025',
     slug: 'CoffeeRewind-2025',
+    largeImages: true,
     date: '2026-01-04',
     content: [
       "In 2025, I logged 45 bags of coffee which equates to a 25% increase in consumption from last year which is awesome!",
