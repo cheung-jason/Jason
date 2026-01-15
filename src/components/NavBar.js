@@ -162,7 +162,7 @@ function NavBar({ blogPosts, experiences, interests, scrollToSection, mode, togg
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: 1200, mx: 'auto' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Link
-              href="#/"
+              href="https://cheung-jason.github.io/Jason/"
               underline="none"
               sx={{ 
                 color: mode === 'light' ? '#666666' : '#ffffff', 
@@ -172,18 +172,18 @@ function NavBar({ blogPosts, experiences, interests, scrollToSection, mode, togg
               }}
               onClick={e => { 
                 e.preventDefault(); 
-                window.location.href = window.location.origin;
+                window.location.href = 'https://cheung-jason.github.io/Jason/';
               }}
             >
               Jason Cheung
             </Link>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0 }}>
               <Button
-                href="/"
+                href="https://cheung-jason.github.io/Jason/"
                 sx={{ color: mode === 'light' ? '#666666' : '#ffffff', textTransform: 'none', fontWeight: 500, fontSize: '0.875rem', py: 0.5 }}
                 onClick={e => { 
                   e.preventDefault(); 
-                  window.location.href = window.location.origin;
+                  window.location.href = 'https://cheung-jason.github.io/Jason/';
                 }}
               >Home</Button>
               <Button

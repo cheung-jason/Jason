@@ -251,7 +251,7 @@ function InterestsMapSection({ mode }) {
     const centerNode = node.filter(d => d.isCenter);
     
     centerNode.append('image')
-      .attr('xlink:href', `${process.env.PUBLIC_URL}/images/Interest%20Map/profile.png`)
+      .attr('xlink:href', process.env.PUBLIC_URL + '/images/Interest Map/profile.png')
       .attr('width', avatarSize)
       .attr('height', avatarSize)
       .attr('x', -avatarSize / 2)
